@@ -1,3 +1,9 @@
+mod lesson_03 {
+    // pub mod variables;
+    // pub mod scope; 
+    pub mod constants;
+}
+
 fn main() {
-    println!("Hello, world!");
+    lesson_03::constants::constants()
 }
