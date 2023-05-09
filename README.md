@@ -18,6 +18,5 @@ Tool for bounding, running and maintaining Rust project
 Another cli tool, this one is for code formatting. 
 
 ```bash
-cd ./src
 rustfmt <filename>
 ```
