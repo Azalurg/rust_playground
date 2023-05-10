@@ -8,5 +8,4 @@ pub fn pdt() {
     let b: bool = false;
 
     let c: char = 'a';
-    let s: &str = "ala ma kota";
 }
