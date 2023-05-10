@@ -19,9 +19,13 @@
 //     pub mod cac;    //casting & conversion
 // }
 
-mod lesson_07 {
-    pub mod conditions;
-    pub mod fizzbuzz;
+// mod lesson_07 {
+//     pub mod conditions;
+//     pub mod fizzbuzz;
+// }
+
+mod lesson_08 {
+    pub mod math;
 }
 
 fn main() {
@@ -29,5 +33,7 @@ fn main() {
     // lesson_04::compound::compound();
     // lesson_05::input::input();
     // lesson_06::cac::cac();
-    lesson_07::fizzbuzz::fizzbuzz();
+    // lesson_07::fizzbuzz::fizzbuzz();
+    println!("{}", lesson_08::math::math(12.2, 19.1, "div"))
+
 }
