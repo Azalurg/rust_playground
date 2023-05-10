@@ -5,3 +5,7 @@ version = 3
 [[package]]
 name = "playground"
 version = "0.1.0"
+
+[[package]]
+name = "yt_lessons"
+version = "0.1.0"
