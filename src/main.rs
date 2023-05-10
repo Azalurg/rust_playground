@@ -10,12 +10,18 @@
 //     pub mod compound;  
 // }
 
-mod lesson_05 {
-    pub mod input;
+// mod lesson_05 {
+//     pub mod input;
+// }
+
+mod lesson_06 {
+    pub mod arithmetic;
+    pub mod cac;    //casting & conversion
 }
 
 fn main() {
     // lesson_03::constants::constants();
     // lesson_04::compound::compound();
-    lesson_05::input::input();
+    // lesson_05::input::input();
+    lesson_06::cac::cac()
 }
