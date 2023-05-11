@@ -1,0 +1,3 @@
+# YT Rust Tutorial
+
+Here is the the part of code I've written with [YouTube course](https://www.youtube.com/watch?v=T_KrYLW4jw8&list=PLzMcBGfZo4-nyLTlSRBvo0zjSnCnqjHYQ&index=2) by "Tech With Tim". Unfortunetli it was only 9 chapters long...
