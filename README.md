@@ -13,7 +13,7 @@ Tool for bounding, running and maintaining Rust project
 `cargo run` - compile and run project
 `cargo check` - check if project is compilable without compiling
 
-### Rustfmt CLI 
+### Rustfmt CLI
 
 Another cli tool, this one is for code formatting. 
 
