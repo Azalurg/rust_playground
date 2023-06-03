@@ -1,16 +1,8 @@
 [package]
-name = "playground"
+name = "ownership"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[workspace]
-members = [
-    "yt_lessons",
-    "guessing_game",
-    "common_programming_concepts",
-    "ownership"
-]
 
 [dependencies]
