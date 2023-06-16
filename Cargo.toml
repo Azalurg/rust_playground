@@ -8,10 +8,10 @@ edition = "2021"
 [workspace]
 members = [
     "yt_lessons",
-    "guessing_game",
-    "common_programming_concepts",
-    "ownership",
-    "structs"
+    "book/guessing_game",
+    "book/common_programming_concepts",
+    "book/ownership",
+    "book/structs"
 ]
 
 [dependencies]
