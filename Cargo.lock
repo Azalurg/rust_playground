@@ -39,6 +39,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "common_collections"
+version = "0.1.0"
+
+[[package]]
 name = "common_programming_concepts"
 version = "0.1.0"
 
