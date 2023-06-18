@@ -1,5 +1,5 @@
 /*
-Implementation fo coin system with enum form chapter 6 of Rust book
+    Implementation fo coin system with enum form chapter 6 of Rust book
 */
 
 #[derive(Debug)]
