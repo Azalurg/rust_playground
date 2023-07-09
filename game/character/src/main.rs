@@ -136,6 +136,7 @@ impl Character {
     fn take_damage(&mut self, damage: u32) {
         if damage >= self.current_hp {
             self.current_hp = 0;
+            println!("Character {} {} is dead.", self.name, self.level)
         } else {
             self.current_hp -= damage;
         }
@@ -158,6 +159,55 @@ impl Character {
         println!("{:?} {:?} {} {}/{} {}",self.race, self.class, self.level, self.xp, self.max_xp, self.free_stats_points);
         println!("Stats: {:?}", self.stats);
     }
+
+    fn attack(&self, who: &mut Mob) {
+        who.take_damage(self.stats.strength + self.stats.agility + self.stats.intelligence);
+    }
+
+    fn add_point(&mut self, stats: Stats) {
+        if stats.strength + stats.agility + stats.intelligence > self.free_stats_points{
+            println!("Not enough points");
+        } else {
+            self.stats.strength += stats.strength;
+            self.stats.agility += stats.agility;
+            self.stats.intelligence += stats.intelligence;
+        }
+    }
+}
+
+struct Mob{
+    name: String,
+    max_hp: u32,
+    current_hp: u32,
+    level: u32,
+    stats: Stats
+}
+
+impl Mob {
+    fn new(name: String, level: u32, stats_gain_per_level: Stats) -> Mob{
+        let stats = Stats { strength: level * stats_gain_per_level.strength, agility: level * stats_gain_per_level.agility, intelligence: level * stats_gain_per_level.intelligence };
+        
+        Mob{
+            name,
+            max_hp: level * stats_gain_per_level.strength * 5,
+            current_hp: level * stats_gain_per_level.strength * 5,
+            level,
+            stats
+        }
+    }
+
+    fn attack(&self, who: &mut Character) {
+        who.take_damage(self.stats.strength + self.stats.agility + self.stats.intelligence);
+    }
+
+    fn take_damage(&mut self, damage: u32) {
+        if damage >= self.current_hp {
+            self.current_hp = 0;
+            println!("Mob {} {} is dead.", self.name, self.level)
+        } else {
+            self.current_hp -= damage;
+        }
+    }
 }
 
 fn main() {
@@ -171,6 +221,29 @@ fn main() {
         character.gain_xp(81000); // Gain 81000 XP
         character.take_damage(20); // Take 20 damage
         character.print();
-        println!("---------------------");
+        println!("-------------");
+    }
+
+    let mut hero = Character::new(String::from("Lisa"), Classes::Warrior, Races::Elf); 
+    hero.gain_xp(20000);
+    hero.add_point(Stats { strength: 50, agility: 20, intelligence: 4 });
+    let mut zombie = Mob::new(String::from("Zombie"), 20, Stats { strength: 4, agility: 1, intelligence: 1 });
+    println!("--- Fight ---");
+    hero.print();
+
+    loop{
+        println!("-------------");
+        println!("Character: {} | Mob: {}",hero.current_hp, zombie.current_hp);
+        println!("-------------");
+
+        hero.attack(&mut zombie);
+        if zombie.current_hp == 0 {
+            break;
+        }
+        
+        zombie.attack(&mut hero);
+        if hero.current_hp == 0 {
+            break
+        };
     }
 }
