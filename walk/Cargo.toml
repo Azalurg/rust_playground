@@ -1,16 +1,12 @@
 [package]
-name = "playground"
+name = "walk"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[workspace]
-members = [
-    "yt_lessons",
-    "book/*",
-    "game/*",
-    "walk"
-]
-
 [dependencies]
+id3 = "1.10.0"
+rust-embed = "8.1.0"
+tempfile = "3.8.1"
+walkdir = "2.4.0"
